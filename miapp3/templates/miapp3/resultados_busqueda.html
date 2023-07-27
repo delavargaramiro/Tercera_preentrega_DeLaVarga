@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados de Búsqueda</title>
+</head>
+<body>
+    <h1>Resultados de Búsqueda</h1>
+    <h2>Clientes:</h2>
+    <ul>
+        {% for cliente in resultados_clientes %}
+        <li>{{ cliente }}</li>
+        {% empty %}
+        <li>No se encontraron resultados</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Productos:</h2>
+    <ul>
+        {% for producto in resultados_productos %}
+        <li>{{ producto }}</li>
+        {% empty %}
+        <li>No se encontraron resultados</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

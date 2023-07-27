@@ -1,6 +1,6 @@
 
 from django import forms
-from .models import Cliente, Producto
+from .models import Cliente, Producto, Pedido
 
 class ClienteForm(forms.ModelForm):
     class Meta:
@@ -15,3 +15,7 @@ class ProductoForm(forms.ModelForm):
 class BusquedaForm(forms.Form):
     termino_busqueda = forms.CharField(label='Buscar')
 
+class PedidoForm(forms.ModelForm):
+    class Meta:
+        model = Pedido
+        fields = '__all__'
