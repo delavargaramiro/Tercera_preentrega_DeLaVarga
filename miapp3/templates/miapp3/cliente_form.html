@@ -7,11 +7,19 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"> 
 </head>
 <body>
+    <nav class="navbar navbar-light bg-light static-top">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'Inicio' %}">Inicio</a> 
+        </div>
+    </nav>
+    {% block content %} 
     <h1>Registrar Cliente</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Guardar</button>
     </form>
+    {% endblock %}
 </body>
 </html>
+

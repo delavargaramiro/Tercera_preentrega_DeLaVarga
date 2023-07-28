@@ -4,6 +4,10 @@
     <title>Registrar Producto</title>
 </head>
 <body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-light bg-light static-top">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'Inicio' %}">Inicio</a> 
     <h1>Registrar Producto</h1>
     <form method="post">
         {% csrf_token %}
