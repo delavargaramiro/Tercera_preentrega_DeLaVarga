@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Registrar Producto</title>
-</head>
-<body>
+{% extends 'miapp3/base.html' %}
+
+{% block titulo %}
+    Registrar productos
+{% endblock titulo %}
+
+{% block cabecera %}
+    Registrar productos
+{% endblock cabecera %}
     <!-- Navigation-->
+    {% block contenido %} 
     <nav class="navbar navbar-light bg-light static-top">
         <div class="container">
             <a class="navbar-brand" href="{% url 'Inicio' %}">Inicio</a> 
@@ -14,5 +18,6 @@
         {{ form.as_p }}
         <button type="submit">Guardar</button>
     </form>
+    {% endblock contenido %}
 </body>
 </html>

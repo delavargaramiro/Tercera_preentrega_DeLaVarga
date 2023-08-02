@@ -1,21 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-    {% load static %}
-    <title>Registrar Pedido</title>
-</head>
-<body>
+{% extends 'miapp3/base.html' %}
+
+{% block titulo %}
+    Registrar pedidos
+{% endblock titulo %}
+
+{% block cabecera %}
+    Registrar pedidos
+{% endblock cabecera %}
+
+
     <!-- Navigation-->
+    {% block contenido %} 
     <nav class="navbar navbar-light bg-light static-top">
         <div class="container">
             <a class="navbar-brand" href="{% url 'Inicio' %}">Inicio</a> 
-    {% block content %} 
+    
     <h1>Registrar Pedido</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Guardar</button>
     </form>
-    {% endblock %}
+    {% endblock contenido %}
 </body>
 </html>
