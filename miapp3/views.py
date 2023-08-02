@@ -36,7 +36,9 @@ def buscar_view(request):
             termino_busqueda = form.cleaned_data['termino_busqueda']
             resultados_clientes = Cliente.objects.filter(nombre__icontains=termino_busqueda)
             resultados_productos = Producto.objects.filter(nombre__icontains=termino_busqueda)
-            return render(request, 'miapp3/resultados_busqueda.html', {'resultados_clientes': resultados_clientes, 'resultados_productos': resultados_productos})
+            resultados_pedidos = Pedido.objects.filter(cliente__nombre__icontains=termino_busqueda) | Pedido.objects.filter(producto__nombre__icontains=termino_busqueda)
+            return render(request, 'miapp3/resultados_busqueda.html', 
+                          {'resultados_clientes': resultados_clientes, 'resultados_productos': resultados_productos, 'resultados_pedidos': resultados_pedidos,})
     else:
         form = BusquedaForm()
     return render(request, 'miapp3/buscar_form.html', {'form': form})

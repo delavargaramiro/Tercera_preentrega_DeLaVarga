@@ -1,26 +1,38 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Resultados de Búsqueda</title>
-</head>
-<body>
-    <h1>Resultados de Búsqueda</h1>
-    <h2>Clientes:</h2>
-    <ul>
-        {% for cliente in resultados_clientes %}
-        <li>{{ cliente }}</li>
-        {% empty %}
-        <li>No se encontraron resultados</li>
-        {% endfor %}
-    </ul>
+{% extends 'miapp3/base.html' %}
 
-    <h2>Productos:</h2>
-    <ul>
-        {% for producto in resultados_productos %}
-        <li>{{ producto }}</li>
-        {% empty %}
-        <li>No se encontraron resultados</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% block titulo %}
+    Resultados de Búsqueda
+{% endblock titulo %}
+
+{% block cabecera %}
+    Resultados de Búsqueda
+{% endblock cabecera %}
+
+{% block contenido %}
+<h2>Clientes:</h2>
+<ul>
+    {% for cliente in resultados_clientes %}
+    <li>{{ cliente }}</li>
+    {% empty %}
+    <li>No se encontraron clientes</li>
+    {% endfor %}
+</ul>
+
+<h2>Productos:</h2>
+<ul>
+    {% for producto in resultados_productos %}
+    <li>{{ producto }}</li>
+    {% empty %}
+    <li>No se encontraron productos</li>
+    {% endfor %}
+</ul>
+
+<h2>Pedidos:</h2>
+<ul>
+    {% for pedido in resultados_pedidos %}
+    <li>{{ pedido }}</li>
+    {% empty %}
+    <li>No se encontraron pedidos</li>
+    {% endfor %}
+</ul>
+{% endblock contenido %}
